@@ -23,7 +23,7 @@ Installation
 5. Run the app using: python src/main.py
 
 
-#### Drawback and Tradeoffs
+#### Drawbacks and Tradeoffs
 - Using Anthropic can hit a rate limit
 - The vector database only currently has 30 foods retrieved from USDA
-- Often times users might not get many a better alternative
+- Often times users might not get many better food alternatives
