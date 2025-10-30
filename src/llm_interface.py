@@ -49,18 +49,15 @@ class LLMInterface:
     
 
 if __name__ == "__main__":
-    # Initialize handler
     load_dotenv()
     handler = LLMInterface()
     
-    # Simple generation
     response = handler.generate(
         prompt="What are the health benefits of chicken breast?",
         system_msg="You are a nutrition expert."
     )
     print(response)
     
-    # Template-based generation
     template = """
     Analyze the following diet:
     Foods: {foods}

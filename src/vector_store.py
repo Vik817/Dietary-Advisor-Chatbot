@@ -85,7 +85,6 @@ class VectorStore:
         return self.vectorstore.as_retriever(search_kwargs=search_kwargs)
     
 if __name__ == "__main__":
-    # Initialize with HuggingFace embeddings (free!)
     vs_manager = VectorStore()
     
     print("ChromaDB Vector Store initialized!")

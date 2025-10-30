@@ -93,7 +93,7 @@ def main():
     print("\nInitializing...")
     try:
         usda = APIClient()
-        llm = LLMInterface()  # or "openai"
+        llm = LLMInterface()
         vs = VectorStore()
 
         load_vector_db(vs, usda)
@@ -108,7 +108,6 @@ def main():
         print("  - ANTHROPIC_API_KEY in .env")
         return
     
-    # 2. Get user input
     location = input("Your location: ").strip() or "United States"
     
     print("\nEnter 3 foods you eat:")
@@ -125,7 +124,6 @@ def main():
     print(f"\nLocation: {location}")
     print(f"Foods: {', '.join(foods)}\n")
     
-    # 3. Process each food
     all_foods = []
     
     for food_name in foods:
@@ -143,7 +141,6 @@ def main():
             print(f"Found: {food.description}")
             print(f"Protein: {food.protein}g | Carbs: {food.carbs}g | Fat: {food.fat}g")
             
-            # Store for analysis
             all_foods.append({
                 'name': food.description,
                 'protein': food.protein,
@@ -189,7 +186,6 @@ def main():
         except Exception as e:
             print(f"Error processing '{food_name}': {e}\n")
     
-    # 4. Overall analysis
     if all_foods:
         print("=" * 60)
         print("OVERALL ANALYSIS")
@@ -204,7 +200,7 @@ def main():
             )
             print("\n" + result['analysis'])
         except Exception as e:
-            print(f"\n⚠️  Could not generate analysis: {e}")
+            print(f"\nCould not generate analysis: {e}")
     
     print("\n" + "=" * 60)
     print("Thanks for using Nutrition Assistant!")
